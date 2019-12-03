@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true,
+    "module": "esnext",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "types": ["jest"],
+    "lib": ["es2017", "dom"],
+    "baseUrl": "src",
+    "skipLibCheck": true
+  },
+  "angularCompilerOptions": {
+    "disableTypeScriptVersionCheck": true
+  },
+  "exclude": ["node_modules"]
+}
