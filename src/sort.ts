@@ -107,6 +107,7 @@ const services = [
     "enterprise":false,
     "status":{
       "phase":"Ready",
+      // @ts-ignore
       "lastUpdated":null,
       "http":{
         "statusCode":200,
@@ -163,10 +164,12 @@ const services = [
         },
         "type":"Github",
         "public":true,
+        // @ts-ignore
         "data":null
       },
       "status":{
         "phase":"Ready",
+        // @ts-ignore
         "lastUpdated":null,
         "http":{
           "statusCode":200,
@@ -543,6 +546,7 @@ const services = [
         },
         "type":"Gitlab",
         "public":false,
+        // @ts-ignore
         "data":null
       },
       "status":{
@@ -1046,6 +1050,7 @@ const services = [
     "enterprise":false,
     "status":{
       "phase":"Ready",
+      // @ts-ignore
       "lastUpdated":null,
       "http":{
         "statusCode":200,
@@ -1102,10 +1107,12 @@ const services = [
         },
         "type":"Docker",
         "public":false,
+        // @ts-ignore
         "data":null
       },
       "status":{
         "phase":"Ready",
+        // @ts-ignore
         "lastUpdated":null,
         "http":{
           "statusCode":200,
@@ -1237,6 +1244,7 @@ const services = [
     "enterprise":false,
     "status":{
       "phase":"Ready",
+      // @ts-ignore
       "lastUpdated":null,
       "http":{
         "statusCode":200,
@@ -1298,6 +1306,7 @@ const services = [
       },
       "status":{
         "phase":"Ready",
+        // @ts-ignore
         "lastUpdated":null,
         "http":{
           "statusCode":200,
@@ -1514,9 +1523,11 @@ const services = [
       "phase":"Error",
       "reason":"ServiceUnavailable",
       "message":"Get http://10.0.128.96:31104: dial tcp 10.0.128.96:31104: i/o timeout",
+      // @ts-ignore
       "lastUpdated":null,
       "http":{
         "statusCode":500,
+        // @ts-ignore
         "lastAttempt":null,
         "errorMessage":""
       },
@@ -1524,6 +1535,7 @@ const services = [
         {
           "name":"harbor-registry",
           "type":"HTTPStatus",
+          // @ts-ignore
           "lastAttempt":null,
           "reason":"ServiceUnavailable",
           "message":"Get http://10.0.128.96:31104: dial tcp 10.0.128.96:31104: i/o timeout",
@@ -1572,15 +1584,18 @@ const services = [
         },
         "type":"Harbor",
         "public":false,
+        // @ts-ignore
         "data":null
       },
       "status":{
         "phase":"Error",
         "reason":"ServiceUnavailable",
         "message":"Get http://10.0.128.96:31104: dial tcp 10.0.128.96:31104: i/o timeout",
+        // @ts-ignore
         "lastUpdated":null,
         "http":{
           "statusCode":500,
+          // @ts-ignore
           "lastAttempt":null,
           "errorMessage":""
         },
@@ -1588,6 +1603,7 @@ const services = [
           {
             "name":"harbor-registry",
             "type":"HTTPStatus",
+            // @ts-ignore
             "lastAttempt":null,
             "reason":"ServiceUnavailable",
             "message":"Get http://10.0.128.96:31104: dial tcp 10.0.128.96:31104: i/o timeout",
@@ -2096,6 +2112,7 @@ const services = [
     "enterprise":false,
     "status":{
       "phase":"Ready",
+      // @ts-ignore
       "lastUpdated":null,
       "http":{
         "statusCode":200,
@@ -2152,6 +2169,7 @@ const services = [
       },
       "status":{
         "phase":"Ready",
+        // @ts-ignore
         "lastUpdated":null,
         "http":{
           "statusCode":200,
@@ -2380,12 +2398,15 @@ const types = ["artifactRepository","codeQualityTool","codeRepository","continuo
 
 function sortByToolTypeAndName(services: ToolService[],toolType: string[]): ToolService[] {
   return R.pipe(
+    // @ts-ignore
     R.groupBy((item: ToolService) => R.indexOf(item.toolType, toolType)),
     R.map(R.sort(R.ascend(R.prop('name')))),
     R.values,
     R.flatten,
+    // @ts-ignore
   )(services);
 }
 
+// @ts-ignore
 const result = sortByToolTypeAndName(services, types);
 console.log(result);
